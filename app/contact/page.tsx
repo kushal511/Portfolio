@@ -254,7 +254,7 @@ export default function ContactPage() {
               <Card className="p-6 bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 border-primary/20">
                 <h3 className="text-xl font-bold mb-2">Open to Opportunities</h3>
                 <p className="text-muted-foreground">
-                  I&apos;m currently available for freelance projects, consulting, and full-time opportunities in AI/ML and full-stack development.
+                  I&apos;m actively seeking <strong>Spring 2026 internships</strong> and <strong>co-op opportunities</strong> in AI/ML, Data Science, Generative AI, and Software Engineering roles. Also open to <strong>full-time positions</strong> starting Summer 2026 upon graduation.
                 </p>
               </Card>
             </motion.div>
