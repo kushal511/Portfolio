@@ -34,21 +34,21 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: 'finsight-copilot',
-    title: 'FinSight Copilot',
+    title: 'FinSight Copilot - Due Diligence AI Assistant',
     repo: 'https://github.com/kushal511/FinSight_Copilot',
-    summary: 'AI-powered financial analysis copilot leveraging GenAI and LLMs for intelligent market insights and data-driven decision making.',
-    description: 'Built an advanced financial analysis platform that combines generative AI with real-time market data to provide intelligent insights. The system uses RAG (Retrieval-Augmented Generation) to analyze financial documents, market trends, and historical data, delivering actionable recommendations. Implemented with modern LLM architectures, it offers natural language querying of complex financial datasets, automated report generation, and predictive analytics for investment strategies. The platform integrates multiple financial data APIs and uses vector databases for efficient document retrieval and analysis.',
-    tags: ['GenAI', 'LLM', 'RAG', 'FinTech', 'NLP', 'Machine Learning', 'Financial Analysis'],
-    tech: ['Python', 'LangChain', 'OpenAI', 'Vector DB', 'FastAPI', 'React', 'Financial APIs', 'ChromaDB'],
+    summary: 'Real-time covenant monitoring AI assistant that extracts data from complex financial documents and alerts on breaches instantly using LandingAI DPT-2 and Pathway framework.',
+    description: 'Built an intelligent financial agent that monitors loan covenants in real-time for investors, M&A professionals, and finance leaders. The system extracts covenant terms from PDFs, images, and tables using LandingAI DPT-2 vision AI, monitors financial data in real-time using Pathway framework, and detects breaches instantly with automated email alerts. Features include living memos that auto-update, conversational Q&A interface, and comprehensive covenant compliance checking for leverage ratios, interest coverage, and liquidity requirements. Developed for HackWithBay 2025, solving the critical problem of manual covenant tracking that is slow, error-prone, and misses critical breaches.',
+    tags: ['FinTech', 'AI Document Processing', 'Real-time Monitoring', 'Covenant Analysis', 'Due Diligence', 'Computer Vision', 'Financial Compliance'],
+    tech: ['Python', 'LandingAI DPT-2', 'Pathway Framework', 'PyPDF2', 'Watchdog', 'FastAPI', 'SMTP', 'BeautifulSoup', 'Pandas'],
     highlights: [
-      'RAG pipeline for financial document analysis with high accuracy retrieval',
-      'Natural language interface for querying complex financial datasets',
-      'Real-time market sentiment analysis using transformer models',
-      'Automated financial report generation with customizable templates',
-      'Integration with multiple financial data APIs for comprehensive analysis',
-      'Vector database implementation for efficient document storage and retrieval',
-      'Predictive analytics for investment strategies and market forecasting',
-      'Interactive dashboard for visualizing financial insights and trends'
+      'LandingAI DPT-2 integration for accurate table extraction from covenant documents with vision capabilities',
+      'Pathway Framework for real-time file monitoring and instant processing of data room changes',
+      'Automated covenant compliance checking for leverage ratios, interest coverage, and liquidity requirements',
+      'Intelligent red flag detection with severity levels and evidence-based email alerts',
+      'Living memos that auto-update on every compliance check with executive summaries',
+      'Conversational Q&A interface for natural language queries about covenant status',
+      'Real-time breach detection with instant email notifications and HTML-formatted alerts',
+      'Multi-format document processing: PDFs, images, JSON, CSV, and HTML/iXBRL SEC filings'
     ],
     images: [
       { src: '/projects/finsight-copilot/hero.jpg', alt: 'FinSight Copilot Dashboard', gradient: 'from-blue-500 to-purple-600' },
@@ -59,102 +59,102 @@ export const projects: Project[] = [
     architecture: {
       components: [
         {
-          name: 'Data Ingestion',
+          name: 'Data Room Monitor',
           type: 'service',
-          description: 'Financial data collection from multiple APIs',
-          technologies: ['Python', 'Financial APIs', 'Data Processing']
+          description: 'Pathway Framework for live file monitoring',
+          technologies: ['Pathway', 'Watchdog', 'File System Events']
         },
         {
-          name: 'Document Processor',
-          type: 'service',
-          description: 'PDF and document analysis for financial reports',
-          technologies: ['LangChain', 'PyPDF', 'Text Processing']
-        },
-        {
-          name: 'Vector Database',
-          type: 'storage',
-          description: 'ChromaDB for storing document embeddings',
-          technologies: ['ChromaDB', 'Vector Embeddings']
-        },
-        {
-          name: 'LLM Engine',
+          name: 'Document Extractor',
           type: 'model',
-          description: 'OpenAI GPT for analysis and generation',
-          technologies: ['OpenAI API', 'GPT-4', 'LangChain']
+          description: 'LandingAI DPT-2 for vision-based document processing',
+          technologies: ['LandingAI DPT-2', 'Computer Vision', 'OCR']
         },
         {
-          name: 'RAG Pipeline',
+          name: 'PDF Processor',
           type: 'service',
-          description: 'Retrieval-Augmented Generation system',
-          technologies: ['LangChain', 'Vector Search', 'Context Retrieval']
+          description: 'PyPDF2 for PDF parsing and truncation',
+          technologies: ['PyPDF2', 'PDF Processing', 'Text Extraction']
         },
         {
-          name: 'Analytics Engine',
+          name: 'Financial Data Parser',
           type: 'service',
-          description: 'Market sentiment and predictive analytics',
-          technologies: ['Python', 'Machine Learning', 'NLP']
+          description: 'SEC JSON and CSV data processing',
+          technologies: ['Pandas', 'JSON Parser', 'BeautifulSoup']
         },
         {
-          name: 'API Gateway',
-          type: 'api',
-          description: 'FastAPI backend for frontend integration',
-          technologies: ['FastAPI', 'Python', 'REST API']
+          name: 'Covenant Engine',
+          type: 'algorithm',
+          description: 'Compliance checking for leverage, coverage, liquidity',
+          technologies: ['Python', 'Financial Calculations', 'Rule Engine']
         },
         {
-          name: 'Frontend Dashboard',
+          name: 'Alert System',
+          type: 'service',
+          description: 'SMTP-based email notifications with HTML formatting',
+          technologies: ['SMTP', 'Email Templates', 'HTML Generation']
+        },
+        {
+          name: 'Living Memo Generator',
+          type: 'service',
+          description: 'Auto-updating Markdown and HTML reports',
+          technologies: ['Markdown', 'HTML Templates', 'Report Generation']
+        },
+        {
+          name: 'Chatbot Interface',
           type: 'frontend',
-          description: 'React-based interactive dashboard',
-          technologies: ['React', 'JavaScript', 'Data Visualization']
+          description: 'Conversational Q&A about covenant status',
+          technologies: ['Python CLI', 'Natural Language Processing']
         }
       ],
       dataFlow: [
         {
-          from: 'Data Ingestion',
-          to: 'Document Processor',
-          description: 'Collect financial data and reports',
-          data: 'Raw financial data'
+          from: 'Data Room Monitor',
+          to: 'Document Extractor',
+          description: 'Detect new/modified files in data room',
+          data: 'File change events'
         },
         {
-          from: 'Document Processor',
-          to: 'Vector Database',
-          description: 'Process and embed documents',
-          data: 'Document embeddings'
+          from: 'Document Extractor',
+          to: 'PDF Processor',
+          description: 'Extract covenant terms from images and tables',
+          data: 'Structured covenant data'
         },
         {
-          from: 'Frontend Dashboard',
-          to: 'API Gateway',
-          description: 'User queries and requests',
-          data: 'Natural language queries'
+          from: 'PDF Processor',
+          to: 'Financial Data Parser',
+          description: 'Process credit agreements and documents',
+          data: 'Parsed PDF content'
         },
         {
-          from: 'API Gateway',
-          to: 'RAG Pipeline',
-          description: 'Process user queries',
-          data: 'Query processing'
+          from: 'Financial Data Parser',
+          to: 'Covenant Engine',
+          description: 'Parse SEC JSON and financial metrics',
+          data: 'Financial ratios and metrics'
         },
         {
-          from: 'RAG Pipeline',
-          to: 'Vector Database',
-          description: 'Retrieve relevant context',
-          data: 'Context retrieval'
+          from: 'Covenant Engine',
+          to: 'Alert System',
+          description: 'Check compliance and detect breaches',
+          data: 'Breach alerts and red flags'
         },
         {
-          from: 'RAG Pipeline',
-          to: 'LLM Engine',
-          description: 'Generate insights with context',
-          data: 'Contextual prompts'
+          from: 'Alert System',
+          to: 'Living Memo Generator',
+          description: 'Send email notifications for breaches',
+          data: 'Alert confirmations'
         },
         {
-          from: 'LLM Engine',
-          to: 'Analytics Engine',
-          description: 'Enhanced analysis results',
-          data: 'AI-generated insights'
+          from: 'Living Memo Generator',
+          to: 'Chatbot Interface',
+          description: 'Generate updated compliance reports',
+          data: 'Living memos (MD/HTML)'
         },
         {
-          from: 'Analytics Engine',
-          to: 'Frontend Dashboard',
-          description: 'Deliver financial insights',
-          data: 'Actionable recommendations'
+          from: 'Chatbot Interface',
+          to: 'Covenant Engine',
+          description: 'Answer queries about covenant status',
+          data: 'Conversational responses'
         }
       ]
     }
