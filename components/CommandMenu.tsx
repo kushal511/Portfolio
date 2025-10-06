@@ -6,7 +6,7 @@ import { Command as CommandIcon } from 'lucide-react';
 import { Command } from 'cmdk';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { projects } from '@/content/projects';
+import { projects } from '@/content/projects-new';
 
 export function CommandMenu() {
   const [open, setOpen] = React.useState(false);
@@ -92,7 +92,7 @@ export function CommandMenu() {
                 </Command.Item>
               </Command.Group>
               <Command.Group heading="Projects">
-                {projects.map((project) => (
+                {projects.slice(0, 7).map((project) => (
                   <Command.Item
                     key={project.slug}
                     onSelect={() =>

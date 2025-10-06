@@ -33,6 +33,133 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: 'finsight-copilot',
+    title: 'FinSight Copilot',
+    repo: 'https://github.com/kushal511/FinSight_Copilot',
+    summary: 'AI-powered financial analysis copilot leveraging GenAI and LLMs for intelligent market insights and data-driven decision making.',
+    description: 'Built an advanced financial analysis platform that combines generative AI with real-time market data to provide intelligent insights. The system uses RAG (Retrieval-Augmented Generation) to analyze financial documents, market trends, and historical data, delivering actionable recommendations. Implemented with modern LLM architectures, it offers natural language querying of complex financial datasets, automated report generation, and predictive analytics for investment strategies. The platform integrates multiple financial data APIs and uses vector databases for efficient document retrieval and analysis.',
+    tags: ['GenAI', 'LLM', 'RAG', 'FinTech', 'NLP', 'Machine Learning', 'Financial Analysis'],
+    tech: ['Python', 'LangChain', 'OpenAI', 'Vector DB', 'FastAPI', 'React', 'Financial APIs', 'ChromaDB'],
+    highlights: [
+      'RAG pipeline for financial document analysis with high accuracy retrieval',
+      'Natural language interface for querying complex financial datasets',
+      'Real-time market sentiment analysis using transformer models',
+      'Automated financial report generation with customizable templates',
+      'Integration with multiple financial data APIs for comprehensive analysis',
+      'Vector database implementation for efficient document storage and retrieval',
+      'Predictive analytics for investment strategies and market forecasting',
+      'Interactive dashboard for visualizing financial insights and trends'
+    ],
+    images: [
+      { src: '/projects/finsight-copilot/hero.jpg', alt: 'FinSight Copilot Dashboard', gradient: 'from-blue-500 to-purple-600' },
+      { src: '/projects/finsight-copilot/analysis.jpg', alt: 'Financial Analysis View', gradient: 'from-green-500 to-blue-600' }
+    ],
+    gradient: 'from-blue-400 via-indigo-500 to-purple-600',
+    icon: '💰',
+    architecture: {
+      components: [
+        {
+          name: 'Data Ingestion',
+          type: 'service',
+          description: 'Financial data collection from multiple APIs',
+          technologies: ['Python', 'Financial APIs', 'Data Processing']
+        },
+        {
+          name: 'Document Processor',
+          type: 'service',
+          description: 'PDF and document analysis for financial reports',
+          technologies: ['LangChain', 'PyPDF', 'Text Processing']
+        },
+        {
+          name: 'Vector Database',
+          type: 'storage',
+          description: 'ChromaDB for storing document embeddings',
+          technologies: ['ChromaDB', 'Vector Embeddings']
+        },
+        {
+          name: 'LLM Engine',
+          type: 'model',
+          description: 'OpenAI GPT for analysis and generation',
+          technologies: ['OpenAI API', 'GPT-4', 'LangChain']
+        },
+        {
+          name: 'RAG Pipeline',
+          type: 'service',
+          description: 'Retrieval-Augmented Generation system',
+          technologies: ['LangChain', 'Vector Search', 'Context Retrieval']
+        },
+        {
+          name: 'Analytics Engine',
+          type: 'service',
+          description: 'Market sentiment and predictive analytics',
+          technologies: ['Python', 'Machine Learning', 'NLP']
+        },
+        {
+          name: 'API Gateway',
+          type: 'api',
+          description: 'FastAPI backend for frontend integration',
+          technologies: ['FastAPI', 'Python', 'REST API']
+        },
+        {
+          name: 'Frontend Dashboard',
+          type: 'frontend',
+          description: 'React-based interactive dashboard',
+          technologies: ['React', 'JavaScript', 'Data Visualization']
+        }
+      ],
+      dataFlow: [
+        {
+          from: 'Data Ingestion',
+          to: 'Document Processor',
+          description: 'Collect financial data and reports',
+          data: 'Raw financial data'
+        },
+        {
+          from: 'Document Processor',
+          to: 'Vector Database',
+          description: 'Process and embed documents',
+          data: 'Document embeddings'
+        },
+        {
+          from: 'Frontend Dashboard',
+          to: 'API Gateway',
+          description: 'User queries and requests',
+          data: 'Natural language queries'
+        },
+        {
+          from: 'API Gateway',
+          to: 'RAG Pipeline',
+          description: 'Process user queries',
+          data: 'Query processing'
+        },
+        {
+          from: 'RAG Pipeline',
+          to: 'Vector Database',
+          description: 'Retrieve relevant context',
+          data: 'Context retrieval'
+        },
+        {
+          from: 'RAG Pipeline',
+          to: 'LLM Engine',
+          description: 'Generate insights with context',
+          data: 'Contextual prompts'
+        },
+        {
+          from: 'LLM Engine',
+          to: 'Analytics Engine',
+          description: 'Enhanced analysis results',
+          data: 'AI-generated insights'
+        },
+        {
+          from: 'Analytics Engine',
+          to: 'Frontend Dashboard',
+          description: 'Deliver financial insights',
+          data: 'Actionable recommendations'
+        }
+      ]
+    }
+  },
+  {
     slug: 'skinshade-ai',
     title: 'SkinShade AI',
     repo: 'https://github.com/kushal511/SkinShade-AI',
