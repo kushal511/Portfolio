@@ -46,7 +46,7 @@ export function CommandMenu() {
         <DialogContent className="max-w-[640px] p-0" showCloseButton={false}>
           <Command className="rounded-lg border-0 shadow-none">
             <Command.Input 
-              placeholder="Type a command or search..." 
+              placeholder="Search projects..." 
               className="border-0 border-b px-4 py-3 text-sm outline-none focus:ring-0"
             />
             <Command.List className="max-h-[400px] overflow-y-auto p-2">
