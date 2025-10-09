@@ -35,10 +35,7 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById('featured-projects');
-    projectsSection?.scrollIntoView({ behavior: 'smooth' });
-  };
+
 
   return (
     <div className="relative">
@@ -106,11 +103,13 @@ export default function Home() {
             >
               <Button
                 size="lg"
-                onClick={scrollToProjects}
+                asChild
                 className="gap-2 group"
               >
-                View Projects
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <Link href="/projects">
+                  View Projects
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
               <Button
                 size="lg"

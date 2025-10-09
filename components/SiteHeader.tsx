@@ -42,7 +42,7 @@ export function SiteHeader() {
       transition={{ duration: 0.3 }}
     >
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/about" className="flex items-center space-x-2">
+        <Link href="/about" className="flex items-center space-x-2 ml-4">
           <motion.span
             className="font-bold text-xl bg-gradient-to-r from-indigo-500 to-cyan-500 bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
